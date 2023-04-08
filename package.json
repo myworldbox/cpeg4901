@@ -1,0 +1,12 @@
+{
+  "name": "cpeg4901",
+  "version": "1.0.0",
+  "description": "Machine Learning-based Quantitative Trading Strategies",
+  "repository": "https://github.com/myworldbox/cpeg4901.git",
+  "author": "myworldbox",
+  "license": "MIT",
+  "scripts": {
+    "commit": "npm run commit:npm",
+    "commit:npm": "git add . && git commit -a -m %npm_config_comment% && git push"
+  }
+}
