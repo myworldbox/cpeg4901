@@ -1,0 +1,17 @@
+{
+  "common": {
+    "dashboard": "Dashboard",
+    "create_customer": "Create Customer",
+    "view_customer": "View Customer",
+    "view_payments": "View Payments",
+    "promotional_code": "Promotional Code",
+    "company_registry": "Company Registry",
+    "offline_payment": "Offline Payment",
+    "maintenance_setting": "Maintenance Setting",
+    "data_source": "Data Source",
+    "create_invoice": "Creaet Invoice",
+    
+    "example": "A simple example",
+    "change-locale": "Change locale to \"{{changeTo}}\""
+  }
+}

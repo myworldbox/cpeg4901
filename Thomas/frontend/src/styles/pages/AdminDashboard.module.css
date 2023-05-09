@@ -1,0 +1,26 @@
+.dashbaord{
+    position: relative;
+    width:1500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1600px) {
+    .dashbaord { 
+        width:800px;
+    }                  
+}
+
+@media only screen and (max-width: 900px) {
+    .dashbaord { 
+        width:600px;
+    }                    
+}
+
+@media only screen and (max-width: 600px) {
+    .dashbaord { 
+        width:400px;
+    }                    
+}

@@ -1,0 +1,41 @@
+{
+  "name": "myapibox",
+  "version": "1.0.0",
+  "description": "customised typescript api",
+  "scripts": {
+    "restart": "npx kill-port 8000 ",
+    "start": "npm run restart && node api/index.ts",
+    "dev": "npm run restart && nodemon api/index.ts",
+    "vercel:build": "vercel build",
+    "vercel:dev": "vercel dev",
+    "commit": "git add . && git commit -a -m 'myworldbox' && git push"
+  },
+  "keywords": [],
+  "author": "myworldbox",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/express": "^2.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "fastify": "^4.15.0",
+    "firebase": "^9.17.1",
+    "googleapis": "^110.0.0",
+    "mongoose": "^6.8.4",
+    "node-fetch": "^2.6.1",
+    "pg": "^8.10.0",
+    "redis-om": "^0.3.6",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.16",
+    "@types/mongodb": "^4.0.7",
+    "@types/node": "^18.15.11",
+    "@types/node-fetch": "^2.6.2",
+    "@types/pg": "^8.6.6",
+    "@types/ws": "^8.5.4",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}

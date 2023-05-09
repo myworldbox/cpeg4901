@@ -1,0 +1,17 @@
+{
+  "common": {
+    "dashboard": "主页",
+    "create_customer": "创建客户",
+    "view_customer": "查看客户",
+    "view_payments": "查看款项",
+    "promotional_code": "促销代码",
+    "company_registry": "公司注册",
+    "offline_payment": "线下付款",
+    "maintenance_setting": "维护设定",
+    "data_source": "数据来源",
+    "create_invoice": "Creaet Invoice",
+    
+    "example": "一个简单的例子",
+    "change-locale": "将语言环境更改为\"{{changeTo}}\""
+  }
+}

@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+:root {
+  font-family: 'Poppins', monospace;
+}
+
+[data-theme='light'] {
+  --background1: #ecf2ff;
+  --background2: #e3dffd;
+  --background3: #e5d1fa;
+  --background4: #fff4d2;
+  --foreground1: #232323;
+  --foreground2: #150050;
+  --foreground3: #3f0071;
+  --foreground4: #610094;
+}
+
+[data-theme='dark'] {
+  --background1: #232323;
+  --background2: #18122b;
+  --background3: #393053;
+  --background4: #443c68;
+  --foreground1: #ecf2ff;
+  --foreground2: #e3dffd;
+  --foreground3: #e5d1fa;
+  --foreground4: #fff4d2;
+}
+
+[data-theme='dark'] [data-hide-on-theme='dark'],
+[data-theme='light'] [data-hide-on-theme='light'] {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground1));
+  background: var(--background1);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

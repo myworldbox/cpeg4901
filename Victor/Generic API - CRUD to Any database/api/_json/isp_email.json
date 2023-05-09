@@ -1,0 +1,120 @@
+{
+    "approved_domain": [
+      {
+        "id": 1,
+        "domain": "ad.cityu.edu.hk"
+      },
+      {
+        "id": 2,
+        "domain": "cityu.edu.hk"
+      },
+      {
+        "id": 3,
+        "domain": "common.cpce-polyu.com"
+      },
+      {
+        "id": 4,
+        "domain": "common.cpce-polyu.edu.hk"
+      },
+      {
+        "id": 5,
+        "domain": "common.hkcc-polyu.edu.hk"
+      },
+      {
+        "id": 6,
+        "domain": "connect.hku.hk"
+      },
+      {
+        "id": 7,
+        "domain": "connect.polyu.hk"
+      },
+      {
+        "id": 8,
+        "domain": "connect.ust.hk"
+      },
+      {
+        "id": 9,
+        "domain": "griffithuni.edu.au"
+      },
+      {
+        "id": 10,
+        "domain": "hkmu.edu.hk"
+      },
+      {
+        "id": 11,
+        "domain": "hksyu.edu.hk"
+      },
+      {
+        "id": 12,
+        "domain": "hku.hk"
+      },
+      {
+        "id": 13,
+        "domain": "hkue.edu.hk"
+      },
+      {
+        "id": 14,
+        "domain": "hsu.edu.hk"
+      },
+      {
+        "id": 15,
+        "domain": "kaplan.com"
+      },
+      {
+        "id": 16,
+        "domain": "learner.hkuspace.hku.hk"
+      },
+      {
+        "id": 17,
+        "domain": "life.hkbu.edu.hk"
+      },
+      {
+        "id": 18,
+        "domain": "link.cuhk.edu.hk"
+      },
+      {
+        "id": 19,
+        "domain": "ln.hk"
+      },
+      {
+        "id": 20,
+        "domain": "mail.cbcc.edu.hk"
+      },
+      {
+        "id": 21,
+        "domain": "mail.cihe.edu.hk "
+      },
+      {
+        "id": 22,
+        "domain": "my.cityu.edu.hk"
+      },
+      {
+        "id": 23,
+        "domain": "s.eduhk.hk"
+      },
+      {
+        "id": 24,
+        "domain": "stu.scs.cuhk.edu.hk "
+      },
+      {
+        "id": 25,
+        "domain": "stu.vtc.edu.hk"
+      },
+      {
+        "id": 26,
+        "domain": "student.monash.edu"
+      },
+      {
+        "id": 27,
+        "domain": "study.hkmu.edu.hk"
+      },
+      {
+        "id": 28,
+        "domain": "study.ouhk.edu.hk"
+      },
+      {
+        "id": 29,
+        "domain": "ust.hk"
+      }
+    ]
+  }

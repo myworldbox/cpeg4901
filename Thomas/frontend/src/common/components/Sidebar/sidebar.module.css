@@ -1,0 +1,250 @@
+
+.force{
+    width: 300px;
+}
+
+.navBar .icon{
+    object-fit: none;
+}
+
+.navBar {
+    position: flex;
+    display: inline-block;
+    height: 100vh;
+    width: 65px;
+    min-width: 65px;
+    background: linear-gradient(45deg, var(--background1), var(--background3));
+    color: var(--foreground3);
+    transition: 0.5s;
+    z-index: 10;
+}
+
+/* When Opened */
+.navBar:hover:has(.control:not(:hover)),
+.navBar.active{
+    min-width: 300px;
+}
+
+.navBar:hover:has(.control:not(:hover)) .control,
+.navBar.active .control{
+    left: 285px;
+}
+
+.navBar:hover:has(.control:not(:hover)) .control img,
+.navBar.active .control img{
+    transform: rotate(0deg);
+}
+
+
+.navBar:hover:has(.control:not(:hover)) ul li,
+.navBar.active ul li{
+    padding-top: 5px;
+    padding-bottom: 2px;
+    margin-bottom: 15px;
+}
+
+/* Control Icon */
+.navBar .control{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    bottom: 50%;
+    cursor: pointer;
+    left: 50px;
+    transition: 0.5s;
+}
+
+.navBar .control img{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    border: 3px solid var(--foreground3);
+    transform: rotate(180deg);
+    transition: 1s;
+}
+
+/* Content */
+.navBar .wrapper{
+    position: flex;
+    display: block;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.navBar .header{
+    display: flex;
+    position: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 70px;
+    width: 43px;
+
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    transition: 0.7s;
+    overflow: hidden;
+}
+
+.navBar .header img{
+    display: block;
+    width: 177px;
+    height: 40px;
+    
+    margin-left: 5px;
+    object-fit: fill;
+    transform: translateX(-81px);
+}
+.navBar:hover:has(.control:not(:hover)) .header,
+.navBar.active .header{
+    justify-content: center;
+    height: 10vh;
+    width: 265px;
+}
+
+.navBar:hover:has(.control:not(:hover)) .header img,
+.navBar.active .header img{
+    display: block;
+    width: 177px;
+    height: 40px;
+    
+    margin-left: 5px;
+    object-fit: fill;
+    transform: translateX(0px);
+}
+.navBar .header h1{
+    font-size: 25px;
+    margin-left: 15px;
+    user-select: none;
+    color: var(--foreground2);
+}
+
+.navBar ul::-webkit-scrollbar {
+    display: none;
+}
+
+.navBar ul {
+    display: block;
+    position: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 270px;
+    height: calc(100vh - 290px);
+    margin-left: 5px;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.navBar ul li{
+    display: block;
+    width: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 10px;
+    align-items: center;
+    transition: 0.7s;
+    overflow: hidden;
+}   
+.navBar:hover:has(.control:not(:hover)) ul li,
+.navBar.active ul li{
+    width: 100%;
+}
+
+.navBar ul li:hover:not(:last-child) {
+    background: var(--background4);
+}
+
+.navBar ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navBar ul li a .icon{
+    margin-top: 5px;
+    font-size: 30px;
+    color: var(--foreground3);
+}
+
+.navBar ul li a .title{
+    margin-left: 20px;
+}
+
+
+.navBar ul li:last-child{
+    height: 15vh;
+}
+
+/* setting */
+.settingItem{
+    display: block;
+    width: 60px;
+    padding-left: 5px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    border-radius: 10px;
+    align-items: center;
+    transition: 0.7s;
+    overflow: hidden;
+}
+
+.navBar:hover:has(.control:not(:hover)) .settingItem,
+.navBar.active .settingItem{
+    width: 285px;
+}
+
+.navBar:hover:has(.control:not(:hover)) .settingItem a,
+.navBar.active .settingItem a{
+    width: 270px;
+}
+
+.settingItem a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50px;
+    padding-top: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+.settingItem a:hover{
+    background: var(--background4);
+}
+
+.settingIcon{
+    margin-top: 5px;
+    font-size: 30px;
+    color: var(--foreground3);
+}
+
+.settingTitle{
+    margin-left: 20px;
+}
+
+/* line styling */
+.wrapper hr {
+    height: 1px;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(0, 0, 0, 0)), color-stop(0.5, #333333), to(rgba(0, 0, 0, 0)));
+    background: -webkit-linear-gradient(to left, rgba(0, 0, 0, 0), #333333, rgba(0, 0, 0, 0));
+    background: -moz-linear-gradient(to left, rgba(0, 0, 0, 0), #333333, rgba(0, 0, 0, 0));
+    background: -o-linear-gradient(to left, rgba(0, 0, 0, 0), #333333, rgba(0, 0, 0, 0));
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), #333333, rgba(0, 0, 0, 0));
+    border: 0;
+}
+.wrapper hr:after {
+    display: block;
+    content: '';
+    height: 30px;
+    background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 116, color-stop(0%, #cccccc), color-stop(100%, rgba(255, 255, 255, 0)));
+    background-image: -webkit-radial-gradient(center top, farthest-side, #cccccc 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: -moz-radial-gradient(center top, farthest-side, #cccccc 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: -o-radial-gradient(center top, farthest-side, #cccccc 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: radial-gradient(farthest-side at center top, #cccccc 0%, rgba(255, 255, 255, 0) 100%);
+}

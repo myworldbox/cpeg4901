@@ -1,0 +1,20 @@
+{
+    "entryFile": "src/index.ts",
+    "noImplicitAdditionalProperties": "throw-on-extras",
+    "controllerPathGlobs": ["src/controllers/**.ts"],
+    "spec": {
+      "securityDefinitions":{
+        "isuser":{
+          "type": "apiKey",
+          "name": "csrftoken",
+          "in": "header"
+        }
+      },
+      "outputDirectory": "public",
+      "specVersion": 3
+    },
+    "routes": {
+      "routesDir": "build",
+      "authenticationModule": "./src/middlewares/checkAuthenticate.ts"
+    }
+}

@@ -1,0 +1,63 @@
+
+.pageSelector{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 140px;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px;
+}
+
+.linkWrapper{
+    position: relative;
+    display: flex;
+    width: 140px;
+    height: 140px;
+    cursor: pointer;
+}
+
+.rotateButton{
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    font-size: 100px;
+    color: black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.rotateButton:hover{
+    transform: scale(0.9);
+}
+
+.background{
+    position: relative;
+    width: 140px;
+    height: 140px;
+    background: #ffffff;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.rotateButton:hover + .background{
+    border-radius: 80px;
+    transform: rotate(90deg);
+}
+
+.description{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: none;
+    width: 140px;
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}

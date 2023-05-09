@@ -1,0 +1,896 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"loginInput": {
+				"properties": {
+					"username": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"username",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"mongoose.Types.ObjectId": {
+				"type": "string"
+			},
+			"IDictionary_number_": {
+				"properties": {},
+				"type": "object",
+				"additionalProperties": {
+					"type": "number",
+					"format": "double"
+				}
+			},
+			"modelCreationInput": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"userId": {
+						"$ref": "#/components/schemas/mongoose.Types.ObjectId"
+					},
+					"invested_amount": {
+						"type": "number",
+						"format": "double"
+					},
+					"stocks": {
+						"items": {
+							"$ref": "#/components/schemas/IDictionary_number_"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"name",
+					"userId",
+					"invested_amount",
+					"stocks"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PingResponse": {
+				"properties": {
+					"message": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"isuser": {
+				"type": "apiKey",
+				"name": "csrftoken",
+				"in": "header"
+			}
+		}
+	},
+	"info": {
+		"title": "trading_backend",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/auth/session/login": {
+			"post": {
+				"operationId": "Login",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Authentication"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/loginInput"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/auth/session/register": {
+			"post": {
+				"operationId": "Register",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Authentication"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/loginInput"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/auth/session/verification": {
+			"post": {
+				"operationId": "Verify_session",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Authentication"
+				],
+				"security": [
+					{
+						"isuser": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "header",
+						"name": "csrfToken",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/auth/session/logout": {
+			"delete": {
+				"operationId": "Logout",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"404": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Authentication"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/model/all": {
+			"get": {
+				"operationId": "GetAllModel",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Model"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "header",
+						"name": "csrfToken",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/model/{modelId}": {
+			"get": {
+				"operationId": "GetModelById",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Model"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "modelId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "header",
+						"name": "csrfToken",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/model": {
+			"post": {
+				"operationId": "AddModel",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Model"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "header",
+						"name": "csrfToken",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/modelCreationInput"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteModel",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Model"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "header",
+						"name": "csrfToken",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/modelCreationInput"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/model/start": {
+			"post": {
+				"operationId": "StartModel",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Model"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "header",
+						"name": "csrfToken",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/modelCreationInput"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/model/terminate": {
+			"post": {
+				"operationId": "TerminateModel",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"details": {
+											"type": "string"
+										},
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"details",
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Model"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "header",
+						"name": "csrfToken",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/modelCreationInput"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/ping": {
+			"get": {
+				"operationId": "Ping",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PingResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Development Endpoints"
+				],
+				"security": [],
+				"parameters": []
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
